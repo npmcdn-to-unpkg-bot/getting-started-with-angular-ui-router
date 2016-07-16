@@ -6,8 +6,9 @@
     
 </head>
 <body>
-    <div ng-app="app">
-        <h1>Hello from Angular!</h1> 
+    <div ng-app>
+        <h1>Hello {{ name }} from Angular!</h1>
+        <p>What's your name? <input ng-model="name" /></p>
     </div>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js">
