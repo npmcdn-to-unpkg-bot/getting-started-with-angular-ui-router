@@ -1,0 +1,164 @@
+{
+/*
+	 // Place your snippets for JavaScript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	 // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	 // $1, $2 for tab stops, ${id} and ${id:label} and ${1:label} for variables. Variables with the same id are connected.
+	 // Example:
+	 "Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	},
+	"Describe Testing Block": {
+		"prefix": "desc",
+		"body": [
+			"describe('$1', function() {",
+				"	$2",
+			"});"
+			
+		],
+		"description": "Adds a describe test block"
+	},
+	"It Testing Block": {
+		"prefix": "it",
+		"body": [
+			"it('$1', function() {",
+				"	$2",
+			"});"
+			
+		],
+		"description": "Adds an it testing block"
+	}, 
+	"Expect to Equal Testing Statement": {
+		"prefix": "eq", 
+		"body": [
+			"expect($1).toEqual($2);"
+		],
+		"description": "Adds an expect to equal assertion"
+	}, 
+	"ngcontroller test": {
+		"prefix": "ngcontrollertest", 
+		"body": [
+			"describe('$1'), function() {",
+			"	beforeEach(module('app'));",
+			"	var $controller;",
+			"	beforeEach(inject(function(_$controller_){",
+			"		$controller = _$controller_;",
+			"	}));",
+			"	var $scope = {};",
+			"	var controller = $controller('$1', { $scope: $scope });",
+			"});"
+		], 
+		"description": "Bootstraps a controller test"
+	}, 
+	"ngrouter test": {
+		"prefix": "ngroutestest", 
+		"body": [
+			"describe('$1', function() {",
+			"	var $state;",
+			"",
+			"	beforeEach(module('app'));",
+			"",
+			"	beforeEach(inject(function($injector) {",
+			"		$state = $injector.get('$state');",
+			"	}));",
+			"});"
+		], 
+		"description": "bootstraps a test file for the uirouter"
+	}, 
+	"ngroute test": {
+		"prefix": "routetest", 
+		"body": [
+			"describe('$1', function() {",
+			"	var state;",
+			"",
+			"	it('should have the correct URL', function() {",
+			"		state = $state.get('$1');",
+			"		expect(state.url).toEqual('$2');",
+			"	});", 
+			"", 
+			"	it('should use the correct template', function() {",
+			"		expect(state.templateUrl).toEqual('$3');",
+			"	});",
+			"", 
+			"	it('should call the correct controller', function() {",
+			"		expect(state.controller).toEqual('$4');",
+			"	});",
+			"});$5"
+		], 
+		"description": "adds a test for a state in the uiRouter"
+	}, 
+	"Angular with ui.router": {
+		"prefix": "uirouter", 
+		"body": [
+			"angular", 
+			"	.module('app', ['ui.router'])",
+			"	.config(function($stateProvider) {",
+			"		$stateProvider", 
+			"			.state('home', {",
+			"				url: '/',",
+			"				templateUrl: 'views/home.html'",
+			"				controller: 'HomeController'",
+			"			})",
+			"			$1// use 'newstate' snippet to add more states",
+			"	});"
+		], 
+		"description": "adds ui.router to angular app.js file"
+	},
+	"Add state to ui router": {
+		"prefix": "newstate", 
+		"body": [
+			".state('$1', {",
+			"	url: '$2',",
+			"	templateUrl: '$3',",
+			"	controller: '$4'",
+			"})"
+		], 
+		"description": "Adds a new Ui.router state to $stateProvider"
+	},
+	"karma.conf.js": {
+		"prefix": "karmaconf",
+		"body": [
+			"module.exports = function(config) {",
+			"	config.set({",
+			"		basePath: '.',",
+			"		frameworks: ['jasmine'],",
+			"		files: [",
+			"			'js/angular.js',",
+			"			'tests/angular-ui-router.js',",
+			"			'js/app/**/*.js',",
+			"			'tests/*.spec.js'",
+			"		],",
+			"		exclude: [],",
+			"		plugins: [",
+			"			require(\"karma-chrome-launcher\"),",
+			"			require(\"karma-jasmine\"),",
+			"			require(\"karma-spec-reporter\")",
+			"		],",
+			"		preprocessors: {},",
+			"		reporters: ['spec'],",
+			"		port: 9876,",
+			"		colors: true,",
+			"		logLevel: config.LOG_INFO,",
+			"		autoWatch: false,", 
+			"		browsers: ['Chrome'],",
+			"		singleRun: true,",
+			"		concurrency: Infinity",
+			"	});",
+			"}"
+		],
+		"description": "adds karma.conf.js configuration for karma test runner"
+	}
+}
