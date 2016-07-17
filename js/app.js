@@ -7,15 +7,15 @@ angular
                 templateUrl: 'views/movie.html'
             })
             .state('movie.cast', {
-                url: '/movie/cast',
+                url: '/cast',
                 templateUrl: 'views/movie-cast.html'
             })
             .state('movie.description', {
-                url: '/movie/description',
+                url: '/description',
                 templateUrl: 'views/movie-description.html'
             })
             .state('movie.trailer', {
-                url: '/movie/trailer',
+                url: '/trailer',
                 templateUrl: 'views/movie-trailer.html'
             })
     });
